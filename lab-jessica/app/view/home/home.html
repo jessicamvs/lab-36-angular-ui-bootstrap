@@ -20,18 +20,16 @@
         ng-model="homeCtrl.limit">
 
       <ul>
-        <gallery-item
-          ng-repeat="item in homeCtrl.galleries | fuzzySearch : homeCtrl.search | orderBy : 'name' | limitTo : homeCtrl.limit"
-          gallery="item"
-          ng-click="homeCtrl.currentGallery=item">
-        </gallery-item>
+        <uib-accordion>
+          <gallery-item
+            ng-repeat="item in homeCtrl.galleries | fuzzySearch : homeCtrl.search | orderBy : 'name' | limitTo : homeCtrl.limit"
+            gallery="item"
+            ng-click="homeCtrl.currentGallery=item">
+          </gallery-item>
+        </uib-accordion>
       </ul>
     </div>
 
     <pic-thumbnail-container ng-if="homeCtrl.currentGallery" gallery="homeCtrl.currentGallery"></pic-thumbnail-container>
   </div>
-
-
-
-
 </section>
